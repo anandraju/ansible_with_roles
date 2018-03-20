@@ -1,0 +1,14 @@
+---
+- hosts: webserver
+  sudo: yes
+  gather_facts: no
+  
+  roles:
+  - server-common
+  vars_prompt:
+  - name: sitename
+    prompt: Do you really want to run this Ansible script ..!!
+
+
+- include: webserver.yml
+#- include: dbserver.yml 
